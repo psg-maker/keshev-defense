@@ -51,7 +51,7 @@
 
 ### 4.1 PowerShell을 여는 위치
 
-1. 파일 탐색기에서 `케셰브-방어전\on-client` 폴더를 엽니다(이 PC의 실제 경로: `C:\Users\User\AppData\Local\ALEPH\Workbench\projects\케셰브-방어전\on-client`).
+1. 파일 탐색기에서 `<프로젝트 폴더>\on-client` 폴더를 엽니다. 실행 코드는 특정 절대경로에 의존하지 않으므로 어느 폴더에 받아도 됩니다(새 폴더 재현은 [STUDENT_RELEASE.md](STUDENT_RELEASE.md) 3장).
 2. 주소 표시줄에 `powershell`을 입력하고 Enter를 누릅니다.
 
 Git 최상위(`케셰브-방어전`)에서 `npm.cmd run demo`를 실행하면 `package.json`이 없어 `ENOENT` 오류가 납니다(이 작업 중 실제로 겪음).

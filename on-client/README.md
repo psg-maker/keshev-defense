@@ -37,3 +37,5 @@ npm start도 같은 서버를 켭니다. 기본 실행은 실제 회사 시스�
 - **실행**: 앱 폴더(`on-client`)의 PowerShell에서 `npm.cmd run demo`(예제) 또는 `npm.cmd start`(연결 없음) → `http://127.0.0.1:5189/` → 종료는 `Ctrl+C`.
 
 실행 절차, 시스템 구성도(Mermaid·글), 제공/학생 경계, 오류별 확인 순서, 미확인 기능은 [docs/STUDENT_RUNBOOK.md](docs/STUDENT_RUNBOOK.md)에 있습니다.
+
+버전·새 환경 재현 기록·단계별 결과·데이터 보존 계획·미해결 사항은 [docs/STUDENT_RELEASE.md](docs/STUDENT_RELEASE.md)에 있습니다. 현재 학생 릴리스는 **v0.22-검증 중**이며 실제 연결 미완료 항목이 남아 있습니다.
