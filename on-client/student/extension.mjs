@@ -497,7 +497,7 @@ function renderExplanation({ event, explanation, checkedAt } = {}) {
 }
 
 // 19단계: 보안 조치 요청 상태와 실제 결과 구분
-const RESULT_RECHECK = '효과 없음으로도 성공으로도 판단하지 마세요. 제공 화면의 「연동 시스템 결과만 재조회」 버튼으로 결과만 다시 조회하세요.';
+const RESULT_RECHECK = '효과 없음으로도 성공으로도 판단하지 마세요. 제공 화면의 「원천 결과만 재조회」 버튼으로 결과만 다시 조회하세요.';
 const ACTION_STATES = {
   idle: { text: '아직 미실행(idle)', kind: 'empty', guide: '조치 제안은 실행되지 않았습니다.' },
   loading: { text: '조치 준비 또는 결과 조회 중(loading) · 결과 미확인', kind: 'loading' },

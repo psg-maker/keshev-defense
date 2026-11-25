@@ -25,3 +25,15 @@ npm start도 같은 서버를 켭니다. 기본 실행은 실제 회사 시스�
 - 오류 코드별 해결: docs/CONNECTION_TROUBLESHOOT.md
 - 시작 틀 업데이트(내 파일 보존): docs/STARTER_UPDATE.md
 - 실제 회사 시스템(SDP)·앱 안 AI 연결은 담당자가 따로 안내할 때만 씁니다: docs/SDP_HOST_CONNECTION.md, docs/AI_SETUP_GUIDE.md. 이 연결은 앱을 처음 켜고 13~16단계 화면을 만들거나 공식 AI 코드 판정을 받기 위한 전제 조건은 아닙니다. 다만 17단계 이후의 실제 연결과 새 환경 재현은 해당 단계의 기준에 따라 따로 확인합니다.
+
+## 학생 작성 부분 (케셰브)
+
+이 절은 학생이 추가했습니다. 위의 제공 내용은 고치지 않았습니다.
+
+- **목적**: 직원이 자기 로그인·기기·세션, 업무 앱 접속 판정, 접속·XDR 기록, AI 연결 상태와 사건 설명, 보안 조치 상태, 설치 패키지의 알려진 취약점 조회 결과를 구분해 보는 보안 Agent입니다.
+- **학생이 구현한 기능**: `student/extension.mjs`의 `renderIdentity`(13), `renderDecision`(14), `renderEvents`(15), `renderStatus`(16), `renderAiConnection`(17), `renderExplanation`(18), `renderAction`(19), `renderVulnerabilities`(20). 요청·검사·늦은 응답 차단은 제공 코드(`public/app.js`, `src/`)가 하고, 학생 함수는 받은 값을 화면에 표시합니다.
+- **구성**: 브라우저(`public/app.js` + `student/extension.mjs`) → 로컬 앱 서버(`src/server.mjs`, `127.0.0.1:5189`) → 접근 제어·XDR 시스템(SDP, `src/engine/`) / AI 게이트웨이(CLCO, `src/ai/`) / 조치 연동(`src/actions/`) / OSV(`src/vulnerabilities/`).
+- **지원 환경과 버전**: Windows 11 Pro + Windows PowerShell 5.1에서 Node.js v24.22.1, npm 11.19.1로 실행해 확인했습니다. 수업 기준 Node.js 24.19.0에서는 실행해 보지 않았습니다. 외부 npm 의존성과 `package-lock.json`은 없습니다.
+- **실행**: 앱 폴더(`on-client`)의 PowerShell에서 `npm.cmd run demo`(예제) 또는 `npm.cmd start`(연결 없음) → `http://127.0.0.1:5189/` → 종료는 `Ctrl+C`.
+
+실행 절차, 시스템 구성도(Mermaid·글), 제공/학생 경계, 오류별 확인 순서, 미확인 기능은 [docs/STUDENT_RUNBOOK.md](docs/STUDENT_RUNBOOK.md)에 있습니다.
